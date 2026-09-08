@@ -1,37 +1,37 @@
 /// <reference types="node" />
 
-import * as fs from 'fs';
-import * as path from 'path';
+import * as fs from "fs";
+import * as path from "path";
 
-const __dirname = path.dirname(process.argv[1]);
+const __dirname = path.dirname(process.argv[1] || process.cwd());
 
 // to use the script => `npx ts-node --project tsconfig.node.json scripts/generate-full-project-content.ts` in terminal
 
 const IGNORE_DIRS = [
-  'node_modules',
-  '.git',
-  '.expo',
-  '.next',
-  'android',
-  'public',
-  'dist',
-  'build',
-  'scripts',
-  'db',
-  'postman-collections',
-  'blueprints',
-  'assets',
+  "node_modules",
+  ".git",
+  ".expo",
+  ".next",
+  "android",
+  "public",
+  "dist",
+  "build",
+  "scripts",
+  "db",
+  "postman-collections",
+  "blueprints",
+  "assets",
 ];
 const IGNORE_FILES = [
-  'full-project-content.md',
-  '.env',
-  'package-lock.json',
-  'eslint.config.mts',
-  'tsconfig.json',
-  'README.md',
-  'nodemon.json',
-  '.gitignore',
-  '.sentryclirc',
+  "full-project-content.md",
+  ".env",
+  "package-lock.json",
+  "eslint.config.mts",
+  "tsconfig.json",
+  "README.md",
+  "nodemon.json",
+  ".gitignore",
+  ".sentryclirc",
 ];
 
 const MAX_FILE_SIZE = 1024 * 1024 * 2; // 2MB
@@ -76,9 +76,9 @@ function createMarkdownContent(files: string[], basePath: string): string {
 
       let content: string;
       try {
-        content = fs.readFileSync(file, 'utf-8');
+        content = fs.readFileSync(file, "utf-8");
       } catch {
-        content = '[Could not read file]';
+        content = "[Could not read file]";
       }
 
       return `${relativePath}
@@ -87,11 +87,11 @@ ${content}
 \`\`\`
 -----`;
     })
-    .join('\n');
+    .join("\n");
 }
 
 // Main
-const folderPath = process.argv[2] || './';
+const folderPath = process.argv[2] || "./";
 
 const allFiles = getAllFiles(folderPath);
 
@@ -99,9 +99,9 @@ console.log(`🚀 Found ${allFiles.length} files. Starting...\n`);
 
 const markdownContent = createMarkdownContent(allFiles, folderPath);
 
-const outputPath = path.join(__dirname, 'full-project-content.md');
+const outputPath = path.join(__dirname, "full-project-content.md");
 
-fs.writeFileSync(outputPath, markdownContent, 'utf-8');
+fs.writeFileSync(outputPath, markdownContent, "utf-8");
 
 console.log(`\n\n✅ Done. Processed ${allFiles.length} files.`);
 console.log(`📄 Output: ${outputPath}`);

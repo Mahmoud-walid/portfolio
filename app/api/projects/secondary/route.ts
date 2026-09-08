@@ -1,6 +1,4 @@
-import {
-	getOwnerProjectSecondaryData,
-} from "../../../data";
+import { getOwnerProjectSecondaryData } from "../../../data";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -8,7 +6,7 @@ export const dynamic = "force-dynamic";
 const CACHE_CONTROL =
 	"public, max-age=300, s-maxage=21600, stale-while-revalidate=86400";
 
-export async function GET(request) {
+export async function GET(request: Request) {
 	if (new URL(request.url).search) {
 		return Response.json(
 			{ error: "Query parameters are not supported." },
