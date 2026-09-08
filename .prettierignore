@@ -1,0 +1,13 @@
+node_modules
+dist
+build
+coverage
+.expo
+.idea
+.vscode
+package-lock.json
+assets
+android
+ios
+*.log
+.env

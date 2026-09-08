@@ -1,11 +1,11 @@
 {
-	"description": "My hobby projects, most of them are Next.js apps deployed to Vercel.",
-	"githubUsername": "octocat",
-	"avatarUrl": "",
-	"displayName": "",
-	"email": "",
-	"projects": {
-		"blacklist": [],
-		"heroNames": []
-	}
+  "description": "Frontend Engineer with 3 years of experience building modern and scalable web applications.",
+  "githubUsername": "mahmoud-walid",
+  "avatarUrl": "",
+  "displayName": "Mahmoud Walid",
+  "email": "modywmbadr@gmail.com",
+  "projects": {
+    "blacklist": [],
+    "heroNames": []
+  }
 }

@@ -2,10 +2,10 @@
   "name": "portfolio",
   "version": "1.5.0",
   "private": false,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "npm run setup && next build",
-    "build-only": "next build",
+    "build": "next build",
     "start": "next start",
     "setup": "node ./lib/setup.mjs"
   },
@@ -25,8 +25,10 @@
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
     "postcss": "^8.5.26",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "tailwindcss": "^4.3.3",
     "ts-node": "^10.9.2",
+    "tsx": "^4.23.13",
     "typescript": "^7.0.2"
   }
 }
